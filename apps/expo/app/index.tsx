@@ -1,35 +1,17 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import TodoList from "../components/TodoList";
+import "../global.css";
 
 export default function Home() {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Todo App</Text>
+    <View className="flex-1 bg-gray-100">
+      <View className="bg-blue-500 py-4 px-5 mb-2">
+        <Text className="text-white font-bold text-xl text-center">Todo App</Text>
       </View>
       <TodoList />
       <StatusBar style="auto" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#f5f5f5",
-  },
-  header: {
-    backgroundColor: "#3498db",
-    paddingVertical: 15,
-    paddingHorizontal: 20,
-    marginBottom: 10,
-  },
-  headerText: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-});

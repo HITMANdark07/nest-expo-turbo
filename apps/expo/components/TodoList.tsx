@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, FlatList, TextInput, TouchableOpacity, Text, StyleSheet, Alert } from "react-native";
+import { View, FlatList, TextInput, TouchableOpacity, Text, Alert } from "react-native";
 import { Todo } from "shared";
 import TodoItem from "./TodoItem";
 
@@ -79,67 +79,35 @@ const TodoList: React.FC = () => {
     }
   };
 
+  const renderItem = ({ item }: { item: Todo }) => (
+    <TodoItem todo={item} onToggle={handleToggleTodo} onDelete={handleDeleteTodo} />
+  );
+
   return (
-    <View style={styles.container}>
-      <View style={styles.inputContainer}>
+    <View className="flex-1 p-5">
+      <View className="flex-row mb-5">
         <TextInput
-          style={styles.input}
+          className="flex-1 h-12 border border-gray-300 rounded-md px-4 text-base bg-white"
           value={newTodo}
           onChangeText={setNewTodo}
           placeholder="Add a new todo..."
           placeholderTextColor="#95a5a6"
         />
-        <TouchableOpacity style={styles.addButton} onPress={handleAddTodo}>
-          <Text style={styles.addButtonText}>Add</Text>
+        <TouchableOpacity
+          className="ml-2 bg-blue-500 justify-center items-center rounded-md px-4"
+          onPress={handleAddTodo}
+        >
+          <Text className="text-white font-bold text-base">Add</Text>
         </TouchableOpacity>
       </View>
       <FlatList
+        className="flex-1"
         data={todos}
-        renderItem={({ item }) => (
-          <TodoItem todo={item} onToggle={handleToggleTodo} onDelete={handleDeleteTodo} />
-        )}
-        keyExtractor={(item) => item.id}
-        style={styles.list}
+        renderItem={renderItem}
+        keyExtractor={(item: Todo) => item.id}
       />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-  },
-  inputContainer: {
-    flexDirection: "row",
-    marginBottom: 20,
-  },
-  input: {
-    flex: 1,
-    height: 50,
-    borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 5,
-    paddingHorizontal: 15,
-    fontSize: 16,
-    backgroundColor: "white",
-  },
-  addButton: {
-    marginLeft: 10,
-    backgroundColor: "#3498db",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 5,
-    paddingHorizontal: 15,
-  },
-  addButtonText: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  list: {
-    flex: 1,
-  },
-});
 
 export default TodoList;
