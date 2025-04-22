@@ -19,11 +19,20 @@
     "expo:dev": "turbo run dev --filter=expo"
   },
   "devDependencies": {
+    "@eslint/js": "^8.56.0",
     "create-expo-app": "^3.3.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-native": "^4.1.0",
+    "eslint-plugin-turbo": "^1.12.3",
     "expo-cli": "^6.3.10",
     "prettier": "^3.5.3",
     "turbo": "^2.5.0",
-    "typescript": "5.8.2"
+    "typescript": "5.8.2",
+    "typescript-eslint": "^7.0.0"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {

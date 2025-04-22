@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, FlatList, TextInput, TouchableOpacity, Text, Alert } from "react-native";
+import {
+  View,
+  FlatList,
+  TextInput,
+  TouchableOpacity,
+  Text,
+  Alert,
+} from "react-native";
 import { Todo } from "shared";
 import TodoItem from "./TodoItem";
 
@@ -62,7 +69,9 @@ const TodoList: React.FC = () => {
   const handleToggleTodo = async (id: string): Promise<void> => {
     try {
       setTodos(
-        todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+        ),
       );
     } catch (error) {
       Alert.alert("Error", "Failed to update todo");
@@ -80,7 +89,11 @@ const TodoList: React.FC = () => {
   };
 
   const renderItem = ({ item }: { item: Todo }) => (
-    <TodoItem todo={item} onToggle={handleToggleTodo} onDelete={handleDeleteTodo} />
+    <TodoItem
+      todo={item}
+      onToggle={handleToggleTodo}
+      onDelete={handleDeleteTodo}
+    />
   );
 
   return (
