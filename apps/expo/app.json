@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Expo App",
-    "slug": "expo-app",
+    "name": "Todo App",
+    "slug": "todo-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,7 +24,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "scheme": "expo-app",
+    "scheme": "todo-app",
     "plugins": ["expo-router"]
   }
 }
