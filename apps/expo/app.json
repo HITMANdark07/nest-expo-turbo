@@ -25,6 +25,7 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
+    "newArchEnabled": true,
     "scheme": "todo-app",
     "plugins": ["expo-router"]
   }

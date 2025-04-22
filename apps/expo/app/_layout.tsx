@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Stack } from "expo-router";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { StyleSheet } from "react-native";
+import "../global.css";
 
 // Initialize libraries that need setup
 export default function Layout() {
@@ -13,7 +13,7 @@ export default function Layout() {
   }, []);
 
   return (
-    <GestureHandlerRootView style={styles.container}>
+    <GestureHandlerRootView className="flex-1">
       <SafeAreaProvider>
         <Stack>
           <Stack.Screen
@@ -27,9 +27,3 @@ export default function Layout() {
     </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
