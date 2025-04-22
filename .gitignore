@@ -36,3 +36,24 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+# Expo
+.expo/
+dist/
+web-build/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# NestJS
+/dist
+/node_modules
+
+# Logs
+logs
+*.log
+lerna-debug.log*
+.pnpm-debug.log*
