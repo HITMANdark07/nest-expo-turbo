@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useRouter } from 'expo-router';
 import Constants from 'expo-constants';
-import TodoList from '../components/TodoList';
 
 export default function Home() {
   const router = useRouter();
@@ -15,28 +14,64 @@ export default function Home() {
   const debug = Constants.expoConfig?.extra?.debug || false;
 
   return (
-    <View className='flex-1 bg-gray-100'>
-      <View className='bg-blue-500 py-4 px-5 mb-2 mt-20'>
-        <Text className='text-white font-bold text-xl text-center'>
-          {appName}
-        </Text>
-        <Text className='text-white text-sm text-center mt-1'>
-          Environment: {nodeEnv}
-        </Text>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>{appName}</Text>
+        <Text style={styles.headerSubtitle}>Environment: {nodeEnv}</Text>
       </View>
 
-      <View className='bg-white mx-2 p-4 rounded-lg mb-4'>
-        <Text className='text-gray-800 text-sm font-semibold mb-2'>
-          Configuration
-        </Text>
-        <Text className='text-gray-600 text-xs'>API URL: {apiUrl}</Text>
-        <Text className='text-gray-600 text-xs'>
+      <View style={styles.configCard}>
+        <Text style={styles.configTitle}>Configuration</Text>
+        <Text style={styles.configText}>API URL: {apiUrl}</Text>
+        <Text style={styles.configText}>
           Debug: {debug ? 'Enabled' : 'Disabled'}
         </Text>
       </View>
 
-      <TodoList />
       <StatusBar style='auto' />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  configCard: {
+    backgroundColor: 'white',
+    borderRadius: 8,
+    marginBottom: 16,
+    marginHorizontal: 8,
+    padding: 16,
+  },
+  configText: {
+    color: '#4b5563',
+    fontSize: 12,
+  },
+  configTitle: {
+    color: '#1f2937',
+    fontSize: 14,
+    fontWeight: '600',
+    marginBottom: 8,
+  },
+  container: {
+    backgroundColor: '#f3f4f6',
+    flex: 1,
+  },
+  header: {
+    backgroundColor: '#3b82f6',
+    marginBottom: 8,
+    marginTop: 80,
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+  },
+  headerSubtitle: {
+    color: 'white',
+    fontSize: 14,
+    marginTop: 4,
+    textAlign: 'center',
+  },
+  headerTitle: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+});
