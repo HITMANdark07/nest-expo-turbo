@@ -20,7 +20,10 @@
     "expo:android": "turbo run android --filter=expo",
     "expo:ios": "turbo run ios --filter=expo",
     "expo:web": "turbo run web --filter=expo",
-    "expo:dev": "turbo run dev --filter=expo"
+    "expo:dev": "turbo run dev --filter=expo",
+    "admin:dev": "turbo run dev --filter=@repo/admin",
+    "admin:build": "turbo run build --filter=@repo/admin",
+    "admin:start": "turbo run start --filter=@repo/admin"
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
