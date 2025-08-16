@@ -38,7 +38,11 @@
     "typescript": "5.8.2",
     "typescript-eslint": "^7.0.0"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "yarn@1.22.19",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "engines": {
     "node": ">=18"
   }

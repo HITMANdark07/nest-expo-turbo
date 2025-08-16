@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ["./base", "plugin:react/recommended", "plugin:react-hooks/recommended", "prettier"],
+  extends: [
+    "./base",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier",
+  ],
   plugins: ["react", "react-hooks"],
   settings: {
     react: {

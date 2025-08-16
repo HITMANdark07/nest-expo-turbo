@@ -19,7 +19,7 @@ config.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, "node_modules"),
 ];
 
-// 3. Force Metro to resolve (sub)dependencies only from the root node_modules
-config.resolver.disableHierarchicalLookup = true;
+// 3. Add platforms for expo-notifications compatibility
+config.resolver.platforms = ["ios", "android", "native", "web"];
 
 module.exports = withNativeWind(config, { input: "./global.css" });
