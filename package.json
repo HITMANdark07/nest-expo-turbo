@@ -5,7 +5,9 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint:fix": "turbo run lint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
     "check-types": "turbo run check-types",
     "start": "turbo run start",
     "test": "turbo run test",
@@ -23,7 +25,8 @@
     "expo:dev": "turbo run dev --filter=expo-app",
     "admin:dev": "turbo run dev --filter=admin",
     "admin:build": "turbo run build --filter=admin",
-    "admin:start": "turbo run start --filter=admin"
+    "admin:start": "turbo run start --filter=admin",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
@@ -36,6 +39,8 @@
     "eslint-plugin-react-native": "^4.1.0",
     "eslint-plugin-turbo": "^1.12.3",
     "expo-cli": "^6.3.10",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
     "prettier": "^3.5.3",
     "turbo": "^2.5.0",
     "typescript": "5.8.2",

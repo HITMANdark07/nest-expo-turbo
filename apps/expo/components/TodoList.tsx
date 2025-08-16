@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   View,
   FlatList,
@@ -6,13 +6,13 @@ import {
   TouchableOpacity,
   Text,
   Alert,
-} from "react-native";
-import { Todo } from "shared";
-import TodoItem from "./TodoItem";
+} from 'react-native';
+import { Todo } from 'shared';
+import TodoItem from './TodoItem';
 
 const TodoList: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [newTodo, setNewTodo] = useState<string>("");
+  const [newTodo, setNewTodo] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
   const fetchTodos = async (): Promise<void> => {
@@ -21,22 +21,22 @@ const TodoList: React.FC = () => {
       // Mock data for demo purposes
       setTodos([
         {
-          id: "1",
-          title: "Learn React Native",
+          id: '1',
+          title: 'Learn React Native',
           completed: false,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
         },
         {
-          id: "2",
-          title: "Build a Todo App",
+          id: '2',
+          title: 'Build a Todo App',
           completed: true,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
         },
       ]);
     } catch (error) {
-      Alert.alert("Error", "Failed to fetch todos");
+      Alert.alert('Error', 'Failed to fetch todos');
       console.error(error);
     } finally {
       setLoading(false);
@@ -59,9 +59,9 @@ const TodoList: React.FC = () => {
         updatedAt: new Date().toISOString(),
       };
       setTodos([...todos, newTodoItem]);
-      setNewTodo("");
+      setNewTodo('');
     } catch (error) {
-      Alert.alert("Error", "Failed to add todo");
+      Alert.alert('Error', 'Failed to add todo');
       console.error(error);
     }
   };
@@ -69,21 +69,21 @@ const TodoList: React.FC = () => {
   const handleToggleTodo = async (id: string): Promise<void> => {
     try {
       setTodos(
-        todos.map((todo) =>
-          todo.id === id ? { ...todo, completed: !todo.completed } : todo,
-        ),
+        todos.map(todo =>
+          todo.id === id ? { ...todo, completed: !todo.completed } : todo
+        )
       );
     } catch (error) {
-      Alert.alert("Error", "Failed to update todo");
+      Alert.alert('Error', 'Failed to update todo');
       console.error(error);
     }
   };
 
   const handleDeleteTodo = async (id: string): Promise<void> => {
     try {
-      setTodos(todos.filter((todo) => todo.id !== id));
+      setTodos(todos.filter(todo => todo.id !== id));
     } catch (error) {
-      Alert.alert("Error", "Failed to delete todo");
+      Alert.alert('Error', 'Failed to delete todo');
       console.error(error);
     }
   };
@@ -97,24 +97,24 @@ const TodoList: React.FC = () => {
   );
 
   return (
-    <View className="flex-1 p-5">
-      <View className="flex-row mb-5">
+    <View className='flex-1 p-5'>
+      <View className='flex-row mb-5'>
         <TextInput
-          className="flex-1 h-12 border border-gray-300 rounded-md px-4 text-base bg-white"
+          className='flex-1 h-12 border border-gray-300 rounded-md px-4 text-base bg-white'
           value={newTodo}
           onChangeText={setNewTodo}
-          placeholder="Add a new todo..."
-          placeholderTextColor="#95a5a6"
+          placeholder='Add a new todo...'
+          placeholderTextColor='#95a5a6'
         />
         <TouchableOpacity
-          className="ml-2 bg-blue-500 justify-center items-center rounded-md px-4"
+          className='ml-2 bg-blue-500 justify-center items-center rounded-md px-4'
           onPress={handleAddTodo}
         >
-          <Text className="text-white font-bold text-base">Add</Text>
+          <Text className='text-white font-bold text-base'>Add</Text>
         </TouchableOpacity>
       </View>
       <FlatList
-        className="flex-1"
+        className='flex-1'
         data={todos}
         renderItem={renderItem}
         keyExtractor={(item: Todo) => item.id}

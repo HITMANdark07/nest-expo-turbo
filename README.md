@@ -22,28 +22,35 @@ This Turborepo has some additional tools already set up:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
-### ESLint Configuration
+### Code Quality Tools
 
-The project uses a shared ESLint configuration found in `packages/eslint-config`. Additionally:
+The project uses several tools to maintain code quality:
 
-- Root `.eslintrc.js` extends the shared configuration
-- Each app has its own ESLint configuration tailored to its specific needs
-  - The API app uses NestJS recommended rules
-  - The Expo app includes React and React Native specific linting rules
+- **ESLint**: Shared configuration in `packages/eslint-config`
+- **Prettier**: Code formatting with `.prettierrc` configuration
+- **Husky**: Git hooks for pre-commit formatting and linting
+- **Lint Staged**: Runs Prettier + ESLint only on staged files
 
-To run ESLint on all projects:
+#### Quick Commands
 
-```
+```bash
+# Format all files
+yarn format
+
+# Lint all packages
 yarn lint
+
+# Lint and fix all packages
+yarn lint:fix
+
+# Check formatting without changes
+yarn format:check
 ```
 
-To run ESLint on a specific app:
+#### Git Hooks
 
-```
-yarn lint --filter=api
-# or
-yarn lint --filter=expo
-```
+- **Pre-commit**: Automatically formats and lints staged files
+- **Skip hooks**: Use `git commit --no-verify` (emergency only)
 
 ### Build
 

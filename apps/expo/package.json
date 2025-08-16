@@ -11,6 +11,7 @@
     "build": "expo export",
     "clean": "rm -rf dist .expo",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "tsc": "tsc --noEmit"
   },
   "dependencies": {
