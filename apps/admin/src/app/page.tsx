@@ -1,9 +1,15 @@
 import Image from "next/image";
-import { API, formatDate, generateId } from "shared";
+import { formatDate, generateId } from "shared";
 
 export default function Home() {
   const currentDate = formatDate(new Date());
   const sampleId = generateId();
+
+  // Get environment variables directly
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+  const appName = process.env.NEXT_PUBLIC_APP_NAME || "Admin App";
+  const nodeEnv = process.env.NODE_ENV || "development";
+  const debug = process.env.NODE_ENV === "development";
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -16,10 +22,16 @@ export default function Home() {
           priority
         />
         <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
-          <h2 className="text-lg font-semibold mb-2">Admin Dashboard</h2>
+          <h2 className="text-lg font-semibold mb-2">{appName}</h2>
           <div className="space-y-2 text-sm font-mono">
             <p>
-              <strong>API Base URL:</strong> {API.BASE_URL}
+              <strong>API URL:</strong> {apiUrl}
+            </p>
+            <p>
+              <strong>Environment:</strong> {nodeEnv}
+            </p>
+            <p>
+              <strong>Debug Mode:</strong> {debug ? "Enabled" : "Disabled"}
             </p>
             <p>
               <strong>Current Time:</strong> {currentDate}

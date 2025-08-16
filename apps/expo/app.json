@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Todo App",
-    "slug": "todo-app",
+    "name": "Mobile App",
+    "slug": "mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -26,7 +26,16 @@
       "bundler": "metro"
     },
     "newArchEnabled": true,
-    "scheme": "todo-app",
-    "plugins": ["expo-router"]
+    "scheme": "mobile-app",
+    "plugins": ["expo-router", "expo-asset"],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "apiUrl": "http://localhost:3000",
+      "appName": "Mobile App",
+      "nodeEnv": "development",
+      "debug": false
+    }
   }
 }

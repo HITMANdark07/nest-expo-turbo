@@ -9,7 +9,7 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    PrismaModule,
+    // PrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

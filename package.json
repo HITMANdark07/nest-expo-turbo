@@ -10,20 +10,20 @@
     "start": "turbo run start",
     "test": "turbo run test",
     "clean": "turbo run clean",
-    "api:dev": "turbo run dev --filter=api",
+    "api:dev": "turbo run api:dev --filter=api",
     "api:build": "turbo run build --filter=api",
     "api:start": "turbo run start --filter=api",
-    "prisma:studio": "turbo run prisma:studio --filter=api",
-    "prisma:generate": "turbo run prisma:generate --filter=api",
-    "prisma:migrate:dev": "turbo run prisma:migrate:dev --filter=api",
-    "prisma:migrate:deploy": "turbo run prisma:migrate:deploy --filter=api",
-    "expo:android": "turbo run android --filter=expo",
-    "expo:ios": "turbo run ios --filter=expo",
-    "expo:web": "turbo run web --filter=expo",
-    "expo:dev": "turbo run dev --filter=expo",
-    "admin:dev": "turbo run dev --filter=@repo/admin",
-    "admin:build": "turbo run build --filter=@repo/admin",
-    "admin:start": "turbo run start --filter=@repo/admin"
+    "prisma:studio": "turbo run db:studio --filter=@repo/db",
+    "prisma:generate": "turbo run db:generate --filter=@repo/db",
+    "prisma:migrate:dev": "turbo run db:migrate --filter=@repo/db",
+    "prisma:seed": "turbo run db:seed --filter=@repo/db",
+    "expo:android": "turbo run android --filter=expo-app",
+    "expo:ios": "turbo run ios --filter=expo-app",
+    "expo:web": "turbo run web --filter=expo-app",
+    "expo:dev": "turbo run dev --filter=expo-app",
+    "admin:dev": "turbo run dev --filter=admin",
+    "admin:build": "turbo run build --filter=admin",
+    "admin:start": "turbo run start --filter=admin"
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
@@ -48,5 +48,8 @@
   ],
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1"
   }
 }

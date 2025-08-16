@@ -2,7 +2,7 @@
 
 // API endpoints
 export const API = {
-  BASE_URL: "http://localhost:3000",
+  BASE_URL: "http://localhost:3000", // Default fallback
   TODOS: "/todos",
   USERS: "/users",
 };

@@ -16,11 +16,16 @@
       "inputs": ["$TURBO_DEFAULT$", "tsconfig.json"]
     },
     "dev": {
-      "dependsOn": ["^prisma:generate"],
+      "dependsOn": [],
       "cache": false,
       "persistent": true
     },
     "start": {
+      "cache": false,
+      "persistent": true
+    },
+    "api:dev": {
+      "dependsOn": ["@repo/db#db:generate"],
       "cache": false,
       "persistent": true
     },
@@ -31,17 +36,17 @@
     "clean": {
       "cache": false
     },
-    "prisma:studio": {
+    "db:studio": {
       "cache": false,
       "persistent": true
     },
-    "prisma:generate": {
+    "db:generate": {
       "cache": false
     },
-    "prisma:migrate:dev": {
+    "db:migrate": {
       "cache": false
     },
-    "prisma:migrate:deploy": {
+    "db:seed": {
       "cache": false
     },
     "android": {
