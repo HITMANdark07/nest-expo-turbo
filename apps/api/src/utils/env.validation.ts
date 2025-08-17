@@ -48,7 +48,7 @@ export function validateEnv(): EnvConfig {
     DIRECT_URL: process.env.DIRECT_URL || process.env.DATABASE_URL!,
 
     // API Configuration
-    API_PORT: parseInt(process.env.API_PORT || '3000', 10),
+    API_PORT: parseInt(process.env.API_PORT || '8000', 10),
     API_HOST: process.env.API_HOST || 'localhost',
     NODE_ENV: process.env.NODE_ENV || 'development',
 
