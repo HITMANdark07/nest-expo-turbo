@@ -15,11 +15,11 @@
     "tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "expo": "^53.0.20",
+    "expo": "53.0.23",
     "expo-asset": "~11.1.7",
     "expo-constants": "~17.1.7",
     "expo-linking": "~7.1.7",
-    "expo-router": "~5.1.4",
+    "expo-router": "5.1.7",
     "expo-splash-screen": "~0.30.10",
     "expo-status-bar": "~2.2.3",
     "nativewind": "^4.1.23",
